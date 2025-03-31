@@ -1,113 +1,61 @@
 ---
+layout: friends
 icon: fas fa-stream
 order: 6
 ---
 
-等待更新......
+---
 
-<div class="friends-container">
-  <div class="friend-link">
-    <a href="https://aniale.top/" target="_blank">
-      <div class="avatar">
-        <img src="https://aniale.top/img/avatar.jpg" alt="待添加">
+<div class="friend-links-container">
+  <div class="friend-link-card">
+      <img src="https://www.sekiro.love/upload/www.gaituba.com_crop-round-umzg.png" alt="SerikoLove 师傅博客头像，挂了的话请联系我" class="friend-avatar">
+      <div class="friend-name">
+        <a href="https://www.sekiro.love/">SerikoLove</a>
       </div>
-      <div class="info">
-        <div class="name">Aniale</div>
-        <div class="description">Web✌</div>
-      </div>
-    </a>
-  </div>
-  
-  <div class="friend-link">
-    <a href="https://example.com" target="_blank">
-      <div class="avatar">
-        <img src="https://example.com/avatar.jpg" alt="待添加">
-      </div>
-      <div class="info">
-        <div class="name">待添加</div>
-        <div class="description">待添加</div>
-      </div>
-    </a>
+      <div class="friend-desc">很厉害的师傅，我的 Pwn 引路人😭</div>
   </div>
 
-  <div class="friend-link">
-    <a href="https://example.com" target="_blank">
-      <div class="avatar">
-        <img src="https://example.com/avatar.jpg" alt="待添加">
+  <div class="friend-link-card">
+      <img src="https://www.lancerorz.top/images/avatar.jpg" alt="l4n 师傅博客头像，挂了的话请联系我" class="friend-avatar">
+      <div class="friend-name">
+        <a href="https://www.lancerorz.top/">l4n</a>
       </div>
-      <div class="info">
-        <div class="name">待添加</div>
-        <div class="description">待添加</div>
-      </div>
-    </a>
+      <div class="friend-desc">很厉害的师傅，逆向 ak 和谈恋爱一样简单</div>
   </div>
 
-  <div class="friend-link">
-    <a href="https://example.com" target="_blank">
-      <div class="avatar">
-        <img src="https://example.com/avatar.jpg" alt="待添加">
+  <div class="friend-link-card">
+      <img src="https://aniale.top/img/avatar.jpg" alt="aniale 师傅博客头像，挂了的话请联系我" class="friend-avatar">
+      <div class="friend-name">
+        <a href="https://aniale.top/">aniale</a>
       </div>
-      <div class="info">
-        <div class="name">待添加</div>
-        <div class="description">待添加</div>
-      </div>
-    </a>
+      <div class="friend-desc">很厉害的师傅，我出勤他还在学 web</div>
   </div>
-  
-  <!-- 添加更多友链 -->
+
+  <div class="friend-link-card">
+      <img src="https://dae6897101.top/img/title.png" alt="大鹅 师傅博客头像，挂了的话请联系我" class="friend-avatar">
+      <div class="friend-name">
+        <a href="https://dae6897101.top/">大鹅</a>
+      </div>
+      <div class="friend-desc">嘎嘎嘎~ (很厉害的师傅，逆向未来之星)</div>
+  </div>
+
+  <div class="friend-link-card">
+      <img src="https://www.czxh.top/pic/xiaoyuan.jpg" alt="M.Y 师傅博客头像，挂了的话请联系我" class="friend-avatar">
+      <div class="friend-name">
+        <a href="https://www.czxh.top/">M.Y</a>
+      </div>
+      <div class="friend-desc">很厉害的师傅，misc 未来之星，比我强</div>
+  </div>
 </div>
 
-<style>
-.friends-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px; /* 调整友链之间的空隙 */
-  /* justify-content: center; */
-}
+---
 
-.friend-link {
-  display: flex;
-  align-items: center;
-  background: rgba(57, 197, 188, 0.38);
-  border-radius: 10px;
-  padding: 10px;
-  transition: background 0.3s;
-  width: 100%; /* 设为100%以自适应容器宽度 */
-  max-width: 200px; /* 设置合理的最大宽度 */
-  height: 100%; /* 设为100%以自适应容器宽度 */
-  max-height: 60px; /* 设置合理的最大宽度 */
-  overflow: hidden;
-}
-.friend-link:hover {
-  background: rgba(57, 197, 188, 0.57);
-}
-.avatar {
-  border: 2px solid #fff;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px; /* 头像向右移动，靠近文字 */
-}
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.info .name {
-  font-weight: bold;
-  color: #fff;
-  font-size: 1em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.info .description {
-  font-size: 0.8em;
-  color: #ddd;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-</style>
-
-
+<div class="friend-links-container">
+  <div class="friend-link-card">
+    <img src="" alt="就差你了，快来" class="friend-avatar">
+    <div class="friend-name">
+      <a href="https://www.bilibili.com/video/BV1GJ411x7h7">广告位招租</a>
+    </div>
+    <div class="friend-desc">不可输入空白内容</div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+---
+layout: default
+---
+<style>
+  .friend-links-container {
+    max-width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .friend-link-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 130px;
+    min-width: 100px;
+    transition: transform 0.2s;
+  }
+
+  .friend-link-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .friend-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+  }
+
+  .friend-name {
+    margin: 3px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .friend-name a {
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 继承颜色 */
+    display: block; /* 确保链接填满名称区域 */
+  }
+
+  .friend-name a:hover {
+    color: #007bff; /* 悬停时变色，可自定义 */
+  }
+
+  .friend-desc {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 响应式调整 */
+  @media (max-width: 768px) {
+    .friend-link-card {
+      width: 100px;
+    }
+    .friend-avatar {
+      width: 40px;
+      height: 40px;
+    }
+    .friend-name {
+      font-size: 12px;
+    }
+    .friend-desc {
+      font-size: 8px;
+    }
+  }
+</style>
+
+{% include lang.html %}
+
+<article class="px-1">
+  {% if page.layout == 'page' or page.collection == 'tabs' %}
+    {% assign tab_key = page.title | downcase %}
+    {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+    {% comment %}
+      <h1 class="dynamic-title">
+        {{ title }}
+      </h1>
+    {% endcomment %}
+    <div class="content">
+      {{ content }}
+    </div>
+  {% else %}
+    {{ content }}
+  {% endif %}
+</article>
