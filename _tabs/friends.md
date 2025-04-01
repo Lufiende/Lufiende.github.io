@@ -5,8 +5,12 @@ order: 6
 ---
 
 <p>
-  <span class="heimu" title="你知道的太多了">你其实是来社工的吧</span>
+  目前可公开的情报：<span class="heimu" title="你知道的太多了">你其实是来社工的吧</span>
 </p>
+
+- [团队链接](/friends/#团队链接)
+- [其他师傅](/friends/#其他师傅)
+- [推荐站点](/friends/#推荐站点)
 
 ## 团队链接
 
@@ -74,34 +78,6 @@ order: 6
 
 ## 其他师傅
 
-<div class="friend-links-container">
-
-  <div class="friend-link-card friend-link-vertical">
-    <img src="https://example.com" alt="就等你了" class="friend-avatar">
-    <div class="friend-name">
-      <a href="https://example.com">广告位招租</a>
-    </div>
-    <div class="friend-desc">不可输入空白内容</div>
-  </div>
-
-  <div class="friend-link-card friend-link-vertical">
-    <img src="https://example.com" alt="就等你了" class="friend-avatar">
-    <div class="friend-name">
-      <a href="https://example.com">广告位招租</a>
-    </div>
-    <div class="friend-desc">不可输入空白内容</div>
-  </div>
-
-  <div class="friend-link-card friend-link-vertical">
-    <img src="https://example.com" alt="就等你了" class="friend-avatar">
-    <div class="friend-name">
-      <a href="https://example.com">广告位招租</a>
-    </div>
-    <div class="friend-desc">不可输入空白内容</div>
-  </div>
-
-
-</div>
 
 ---
 
