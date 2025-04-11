@@ -1,4 +1,12 @@
 @mixin styles {
+  /* 友链专属变量 */
+  --friend-card-bg: rgba(249, 249, 249, 0.8); // 自定义值，与你的原始代码一致
+  --friend-border-color: #eeeeee;
+  --friend-shadow-color: rgba(0, 0, 0, 0.1);
+  --friend-name-color: #333333;
+  --friend-desc-color: #34343c; // 使用 --text-color
+  --friend-link-hover: #0056b2; // 使用 --link-color
+
   /* Framework color */
   --main-bg: white;
   --mask-bg: #c1c3c5;
