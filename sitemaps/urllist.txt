@@ -1,0 +1,3 @@
+https://blog.lufiende.work/
+https://blog.lufiende.work/posts/pwn-2025-xihulunjian-writeup-pwn-iot/
+https://blog.lufiende.work/posts/pwn-environment-setup-based-on-wsl-kali-linux/

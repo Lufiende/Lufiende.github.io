@@ -1,0 +1,18 @@
+---
+permalink: /robots.txt
+# The robots rules
+---
+
+User-agent: *
+Disallow: /about/
+Disallow: /assets/
+Disallow: /friends/
+Disallow: /norobots/
+Disallow: /tags/
+Disallow: /404/
+Disallow: /about
+Disallow: /assets
+Disallow: /friends
+Disallow: /norobots
+Disallow: /404
+Disallow: /tags

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://blog.lufiende.work/</title>
+  <link>https://blog.lufiende.work/</link>
+
+<item>
+     <link>https://blog.lufiende.work/</link>
+     <title>Lufiende's Blog</title>
+     <description>这里主要介绍 CTF 与有趣的小玩意！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/posts/pwn-2025-xihulunjian-writeup-pwn-iot/</link>
+     <title>[Pwn] Writeup - 2025西湖论剑 - Pwn &amp; IoT | Lufiende's Blog</title>
+     <description>西湖论剑2025 Pwn 方向 WriteUp ，IoT 暂未更新</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/posts/pwn-environment-setup-based-on-wsl-kali-linux/</link>
+     <title>[Pwn] 环境配置 - 基于 WSL 的 Kali - Linux | Lufiende's Blog</title>
+     <description>使用我们在 Windows 上最棒的 Linux 虚拟机平台 - WSL2 并搭配 VSCode 创建一个易于使用的 Pwn 环境虚拟机</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
