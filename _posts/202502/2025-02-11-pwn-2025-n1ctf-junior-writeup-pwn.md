@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "[Pwn] Writeup - 2025-N1ctf Junior - Pwn"
+title: "[Pwn] Writeup - 2025 - N1ctf Junior"
 date: 2025-02-11 18:01 +0800
 
 description: >-
   西湖论剑2025 Pwn 方向 WriteUp ，目前只有 Remake 和 Write at will
 
-categories: [CTF 相关, Pwn - 二进制安全 , N1ctf Junio , WriteUp]
-tags: [CTF 相关, Pwn - 二进制安全 , N1ctf Junior , WriteUp]
+categories: [CTF-Writeup | 非官方题解, Pwn-2025]
+tags: [CTF, Pwn-Writeup, N1ctf Junior]
 ---
 
 ## Pwn 题解
@@ -18,11 +18,11 @@ tags: [CTF 相关, Pwn - 二进制安全 , N1ctf Junior , WriteUp]
 
 首先先看一眼题目的保护，可以看到保护全开，简单不了一点
 
-![image-20250211151427932](https://webimage.lufiende.work/1739258073623.png)
+![image-20250211151427932](https://webimage.lufiende.work/1745490250269.png)
 
 我们再看一眼代码
 
-![image-20250211151713597](https://webimage.lufiende.work/1739258239291.png)
+![image-20250211151713597](https://webimage.lufiende.work/1745490254862.png)
 
 发现是**`非栈上格式化字符串`** ，但是输入**只有 0x10 个字节**，这意味着你很难去改两个地址，也就是通过常见的利用 `rbp` 指针很难（个人认为不可能）进行任意地址修改
 
@@ -30,7 +30,7 @@ tags: [CTF 相关, Pwn - 二进制安全 , N1ctf Junior , WriteUp]
 
 然后观察程序，我们会发现 `dword_4060` 标志着程序能否进入子函数
 
-![image-20250211152227664](https://webimage.lufiende.work/1739258554538.png)
+![image-20250211152227664](https://webimage.lufiende.work/1745490269908.png)
 
 这个子函数十分明显了，~~我奶奶都会的~~简单栈上格式化字符串利用，输入空间管够
 
@@ -40,15 +40,15 @@ tags: [CTF 相关, Pwn - 二进制安全 , N1ctf Junior , WriteUp]
 
 那么程序提出的时候会执行什么呢？没错，就是 `exit` 函数，准确来说是结束时需要执行的一系列 `exit 执行流`
 
-![image-20250211152854001](https://webimage.lufiende.work/1739258940487.png)
+![image-20250211152854001](https://webimage.lufiende.work/1745490272315.png)
 
 众所周知，~~程序结束了其实也没有结束~~，我们的 `main` 通常都是由程序入口点 `_start` 中 `__libc_start_main` 来引导到我们的 `main` 函数的，结束会调用 `exit()`
 
-![image-20250211173817708](https://webimage.lufiende.work/1739266704286.png)
+![image-20250211173817708](https://webimage.lufiende.work/1745490274655.png)
 
 那么我们便可以劫持 `exit 流` ，比如修改栈上残留的 `dl_fini()` 的位置（爆破，不稳定，没用过，但好像可以，比较吃版本），或者修改栈上残留的 `fini_array` 函数偏移存放位置的地址
 
-![image-20250211173116471](https://webimage.lufiende.work/1739266282439.png)
+![image-20250211173116471](https://webimage.lufiende.work/1745490277135.png)
 
 可以看到，我们只要找到对应地址（理论是 PIE 基址）加个 8 就可以，因为下面留了 `main` 的地址，当然，我改过了，进去以后没什么好说的了
 
@@ -147,15 +147,15 @@ io.interactive()
 
 老样子，看一眼保护，压力小了一些（确信）
 
-![image-20250211174135469](https://webimage.lufiende.work/1739266902514.png)
+![image-20250211174135469](https://webimage.lufiende.work/1745490286424.png)
 
 有沙箱，是白名单，`orw` 预定
 
-![image-20250211174932938](https://webimage.lufiende.work/1739267380528.png)
+![image-20250211174932938](https://webimage.lufiende.work/1745490294751.png)
 
 看一眼代码
 
-![image-20250211174402842](https://webimage.lufiende.work/1739267048551.png)
+![image-20250211174402842](https://webimage.lufiende.work/1745490306574.png)
 
 全在这里了，`sub_4012CF()` 的功能是读一个地址，功能就是读取地址和写地址，其中循环三次，理论上要把握机会，或者创造机会（无限读写的机会）
 
@@ -165,7 +165,7 @@ io.interactive()
 
 众所周知，延迟绑定有这样一个操作
 
-![image-20250211175200116](https://webimage.lufiende.work/1739267525560.png)
+![image-20250211175200116](https://webimage.lufiende.work/1745490302981.png)
 
 `push` 后跳转，简直是栈迁移的绝佳位置，意味着我们只要向 `0x404008` 写入 `bss` 地址，并在 `0x404010` 写入 `pop rbp, ret` 就可以迁移
 

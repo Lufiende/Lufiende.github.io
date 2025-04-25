@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "[Pwn] Writeup - 2025西湖论剑 - Pwn & IoT"
+title: "[Pwn] Writeup - 2025 - 西湖论剑初赛"
 date: 2025-01-22 23:45 +0800
 
 description: >-
   西湖论剑2025 Pwn 方向 WriteUp ，IoT 暂未更新 
 
-categories: [CTF 相关, Pwn - 二进制安全 , 西湖论剑 , WriteUp]
-tags: [CTF 相关, Pwn - 二进制安全 , 西湖论剑 , WriteUp]
+categories: [CTF-Writeup | 非官方题解, Pwn-2025]
+tags: [CTF, Pwn-Writeup, 西湖论剑]
 
 ---
 
@@ -19,23 +19,23 @@ tags: [CTF 相关, Pwn - 二进制安全 , 西湖论剑 , WriteUp]
 
 首先先看一眼题目的保护，可以看到保护全开，看来又是一道考验逻辑的题目
 
-<img src="https://webimage.lufiende.work/1738665684424.png" alt="image-20250204184118111" style="zoom:67%;" />
+<img src="https://webimage.lufiende.work/1745490154681.png" alt="image-20250204184118111" style="zoom:67%;" />
 
 接下来通过初步运行程序和审阅代码发现，题目使用了 `C++` 来恶心选手并且使用了 `Vector 容器` 
 
- <img src="https://webimage.lufiende.work/1738665856587.png" alt="image-20250204185632290" style="zoom: 80%;" />
+ <img src="https://webimage.lufiende.work/1745490159065.png" alt="image-20250204185632290" style="zoom: 80%;" />
 
 由于 `Canary` 的存在，理论上，我们无法单纯通过添加数字覆盖返回地址而不触发保护，并且修改值的函数中有简单的检测，无法直接修改返回地址之类的位置
 
-<img src="https://webimage.lufiende.work/1738666599005.png" alt="image-20250204185632291" style="zoom:67%;" />
+<img src="https://webimage.lufiende.work/1745490161128.png" alt="image-20250204185632291" style="zoom:67%;" />
 
 进一步从程序流以及各个选项中的传参中可以探究出，该容器的地址对应着位于栈上的 `v8` 
 
-<img src="https://webimage.lufiende.work/1738665601178.png" alt="image-20250204183954652" style="zoom: 80%;" />
+<img src="https://webimage.lufiende.work/1745490163820.png" alt="image-20250204183954652" style="zoom: 80%;" />
 
 我们可以清晰的看到 `v8` 的大小为 0x28 ，但是实际上不管是在 `sub_1840` 函数还是 `edit` 、`pop` 函数都以 `*(_QWORD *)(a1 / v8 + 24)` 作为索引，这里的 `a1` 是传入的 `v8` ，意思是该容器的索引位置是 **容器初始地址偏移 0x18 的位置** 
 
-<img src="https://webimage.lufiende.work/1738666381650.png" alt="image-20250204185255096" style="zoom: 80%;" />
+<img src="https://webimage.lufiende.work/1745490170173.png" alt="image-20250204185255096" style="zoom: 80%;" />
 
 这意味着，我们可以**十分轻松的通过覆写索引，绕过检查，直接修改栈上对应的返回地址，甚至是在返回地址处布置 ROP 链条取得 Shell**
 
@@ -179,11 +179,11 @@ io.interactive()
 
 一道 `Shellcode` 的题目，有沙箱，属于 `ORW` 的变式，目前是缺失了 `read()` 
 
-<img src="https://webimage.lufiende.work/1738685380504.png" alt="image-20250205000932518" style="zoom:67%;" />
+<img src="https://webimage.lufiende.work/1745490175460.png" alt="image-20250205000932518" style="zoom:67%;" />
 
 代码逻辑也十分简单，把 `Shellcode` 读到由 `mmap()` 申请的 `RWX` 空间中并执行，其中**会检查 `syscall` 的数量**，由于是遍历检查，哪怕没有超过数量，只要符合 `syscall` 机器码的序列 `0f 05` 重复超过两次就不行，**但是由于可写，可以靠运算在即将执行的位置通过运算算出一个 `0f 05` 也行**
 
-<img src="https://webimage.lufiende.work/1738685443633.png" alt="image-20250205001036237" style="zoom:67%;" />
+<img src="https://webimage.lufiende.work/1745490178390.png" alt="image-20250205001036237" style="zoom:67%;" />
 
 接下来就是寻找 `read()` 的替代品的时候，由于采用了白名单，基本上只能这几个函数中选择，即使转 32 位也无法调用 `read()` 以及和其替代品，可以考虑使用 ·`mmap()` ，它的定义是这样的
 
@@ -283,7 +283,7 @@ shellcode = asm(
     mov rsi, 0
     mov rdi, rsp
     mov eax, 2
-    syscall				// open()
+    syscall       // open()
 
     mov r8, rax
     mov r9, 0
@@ -292,14 +292,14 @@ shellcode = asm(
     mov rsi, 0x1000
     mov rdi, 0x20000
     mov rax, 9
-    syscall				// mmap()
+    syscall       // mmap()
 
     mov rdx, 0x100
     mov rsi, 0x20000
     mov rdi, 1
-    mov rax, 1			// write()
+    mov rax, 1      // write()
     
-    mov r8, 0x0500		// 0f 05 小端序需要 0x050f = 0x0500 + 0x1 x 0xf
+    mov r8, 0x0500    // 0f 05 小端序需要 0x050f = 0x0500 + 0x1 x 0xf
     add r8, 1
     add r8, 1
     add r8, 1
@@ -316,7 +316,7 @@ shellcode = asm(
     add r8, 1
     add r8, 1
     mov r9, 0x100b4
-    mov [r9], r8	   // 构造 syscall ，正好在所有汇编语句后，即 0x100b4
+    mov [r9], r8     // 构造 syscall ，正好在所有汇编语句后，即 0x100b4
     '''
 )
 
@@ -335,21 +335,21 @@ io.interactive()
 
 首先先看一眼题目的保护，保护全开，不免了又是一道花哨题
 
-<img src="https://webimage.lufiende.work/1738687128305.png" alt="image-20250205003840845" style="zoom:67%;" />
+<img src="https://webimage.lufiende.work/1745490183653.png" alt="image-20250205003840845" style="zoom:67%;" />
 
 看一下程序函数和逻辑，我们可以在主函数发现一个有趣的点，这个函数在使用 `ptrace` 监控自己（的子进程）执行的情况，就是 `gdb` 同款的那个 `ptrace` ，值得一提的是，你看到的这个是**我将 “是否被调试” 的检测 `nop` 的版本**，不然会无法调试
 
-![image-20250205003629470](https://webimage.lufiende.work/1738686998263.png)
+![image-20250205003629470](https://webimage.lufiende.work/1745490192665.png)
 
 简单介绍一下，程序靠 `if...else..` 的判断方式，通过 `pid` 来确定程序是执行 `fork` 后的主进程还是子进程，正常来说，子进程的值是 0 ，主进程会获得子进程的值，其中子进程会执行 `if` 的代码，主进程会执行的，就是下面 `else` 的代码
 
 我们先看子进程，其中修改某个偏移地址的值**由于采用了 `int` 类型而没对负数限制**，很容易靠负数进行向低地址的**越界读**，不过只能读两次，泄露两个地址也足够
 
-![image-20250205011423103](https://webimage.lufiende.work/1738689271893.png)
+![image-20250205011423103](https://webimage.lufiende.work/1745490195347.png)
 
 还有一个负责对栈上某个值进行修改，和上文一样，可以向较低的地址进行**越界修改**，你可以修改一个位置很低的栈位置甚至是 `libc`  ，遗憾的是只能用一次
 
-![image-20250205011649039](https://webimage.lufiende.work/1738689416330.png)
+![image-20250205011649039](https://webimage.lufiende.work/1745490201815.png)
 
 
 

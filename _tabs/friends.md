@@ -5,7 +5,7 @@ order: 6
 ---
 
 <p>
-  目前可公开的情报：<span class="heimu" title="你知道的太多了">你其实是来社工的吧</span>
+  目前可公开的情报：<span class="blackout" title="你知道的太多了">你其实是来社工的吧</span>
 </p>
 
 - [团队链接](/friends/#团队链接)
