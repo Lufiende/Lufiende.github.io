@@ -42,7 +42,7 @@ wsl --update
 
 使用微软商店是最简单的方式，直接打开 `Microsoft Store` 搜索 `Kali Linux` 下载安装并打开
 
-<img src="https://webimage.lufiende.work/1745488081622.png" style="zoom: 50%;"  />
+<img src="https://webimage.lufiende.work/1745488081622.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom: 50%;"  />
 
 ### 2-2 使用命令行
 
@@ -69,21 +69,21 @@ wsl.exe --install <发行版名称>
 
 下载 Kali Linux 的 Appx 可以在 [Microsoft Store - Generation Project (v1.2.3)](https://store.rg-adguard.net/) 中下载，你只需要粘贴微软官方商店页面链接就可以下载了，本体在 `Appxbundle` 中
 
-<img src="https://webimage.lufiende.work/1745488122829.png" style="zoom: 33%;" />
+<img src="https://webimage.lufiende.work/1745488122829.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom: 33%;" />
 
 下载好以后可以**双击安装**，当然，用压缩软件打开发现以下文件
 
-<img src="https://webimage.lufiende.work/1745488128837.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488128837.png"  alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 选择最下面的 x64 并再次用压缩软件打开（除非你真的用 ARM 架构的 Windows），并挑个好位置解压，文件夹里面应该有下面的文件，到此就算安装完毕了，只需要启动 `kali.exe` 就可以进行初始化
 
-<img src="https://webimage.lufiende.work/1745488132074.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488132074.png"  alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 ## 3. 配置 Kali
 
 第一次打开需要输入用户名和密码，按提示设置即可，设置完会出现下面的东西，以防万一还是提醒一下**你看不到你输入的密码**
 
-<img src="https://webimage.lufiende.work/1745488136984.png" style="zoom: 50%;" />
+<img src="https://webimage.lufiende.work/1745488136984.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom: 50%;" />
 
 意思是 WSL 安装 Kali 都是以最小化模式安装的，并没有附带 Kali 的哪些强大的工具包，接下来就是去安装那些包的过程，安装的包叫 **`Metapackages`**，就是一次能安很多包的包，为了以后的方便，我们需要安装一些初始工具包，让 Kali 更加完整，我们会在下面指导这部分的安装内容，安装完后会**自动消失**
 
@@ -127,7 +127,7 @@ sudo dpkg-reconfigure locales
 
 看介绍，这是要生成不同地区使用语言的区域设置，用滚轮或者上下键选择语言，这里以防万一可以全选，也可以拉下去只选 `zh_CN.UTF-8 UTF-8 和 en_US.UTF-8 UTF-8`，然后回车
 
-<img src="https://webimage.lufiende.work/1745488147697.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488147697.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 回车后，接下来是选择默认语言，选择 `zh_CN.UTF-8` 就可以，~~除非你是罕见~~，**选完之后关掉现在的终端**，重启或者 logout 也行，重新打开就能看见效果，~~比如看看 apt 的超级牛力~~
 
@@ -151,7 +151,7 @@ kali-tweaks
 
 然后就会出现
 
-<img src="https://webimage.lufiende.work/1745488153624.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488153624.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 第二项就是我们要安装的 `Metapackages` 了，这里我放出来了官方的描述
 
@@ -163,7 +163,7 @@ kali-tweaks
 
 一般选圈住的第一个的 `kali-linux-default`，这里我考虑到可能用不到图形化界面所以选择了 `kali-linux-headless`，如果喜欢一步到位可以选择 `kali-linux-large`，如果有特殊需求可以结合官网安装其他的包
 
-<img src="https://webimage.lufiende.work/1745488158852.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488158852.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 ### 3-3 其他在 kali-tweaks 的修改
 
@@ -209,7 +209,7 @@ sudo apt install wget git curl
 
 点击 install oh-my-zsh 之后，页面会自动滚到下载连接页
 
-<img src="https://webimage.lufiende.work/1745488179829.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488179829.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 ```shell
 # 复制下载链接（注意时效性，二选一）
@@ -247,7 +247,7 @@ Powerline 仓库： [powerline/fonts: Patched fonts for Powerline users.](https:
 
 Nerd 字体安装只需要下载字体安装即可，有些主题可能会指定下面的其中一种
 
-<img src="https://webimage.lufiende.work/1745488481417.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488481417.png"  alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 Powerline 的话克隆一下仓库安装就行（Windows 下）
 
@@ -259,9 +259,9 @@ cd .\fonts\
 
 由于通常使用子系统会使用 Windows Terminal ，所以我们需要在 Windows Terminal 进行一些配置
 
-<img src="https://webimage.lufiende.work/1745488482230.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488482230.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
-<img src="https://webimage.lufiende.work/1745488485745.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488485745.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 选择安装的字体就可以了，图片仅作示例
 
@@ -269,7 +269,7 @@ cd .\fonts\
 
 完成这些工作，你可以在官网的 Themes 找到各种主题
 
-<img src="https://webimage.lufiende.work/1745488491476.png" style="zoom:50%;" />
+<img src="https://webimage.lufiende.work/1745488491476.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom:50%;" />
 
 当然也可以自行在搜索引擎上寻找自己喜欢的主题
 
@@ -301,7 +301,7 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 zsh 内置了许多丰富的插件，查看可以在 `$ZSH/plugins/` 下查看
 
-<img src="https://webimage.lufiende.work/1745488500825.png" style="zoom: 50%;" />
+<img src="https://webimage.lufiende.work/1745488500825.png" alt="{CBE6E768-1BCC-4869-82D5-984D1C9FD922}" style="zoom: 50%;" />
 
 网络上也有许多优秀的插件，比如 `zsh-syntax-highlighting`，链接：https://github.com/zsh-users/zsh-syntax-highlighting
 
