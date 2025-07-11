@@ -9,6 +9,23 @@
   --friend-desc-color: #d3d3d3; // 使用 --text-color
   --friend-link-hover: #66b3ff; // 使用 --link-color
 
+  /* 页面元素专属变量 */
+  --header-zhengfangxing: #ffaca4;
+  --header-lingxing: #86bb70;
+  --header-yinfu: #bfc777;
+  --blockquote-border-left: 5px solid #a492dc;
+  --blockquote-background-color: #f3f0ff;
+  --blockquote-font-color: #d4d4d4;
+  --blockquote-orig-bgcolor: #3d3d3d;
+  --info-blockquote-border-left: 5px solid #8ba5bb;
+  --info-blockquote-background-color: #e4edf64d;
+  --warn-blockquote-border-left: 5px solid #bfc777;
+  --warn-blockquote-background-color: #fffacd4d;
+  --danger-blockquote-border-left: 5px solid #ffaca4;
+  --danger-blockquote-background-color: #fdeaea4d;
+  --success-blockquote-border-left: 5px solid #86bb70;
+  --success-blockquote-background-color: #eef7f04d;
+
   /* Framework color */
   --main-bg: rgb(27, 27, 30);
   --mask-bg: rgb(68, 69, 70);
@@ -114,7 +131,9 @@
   --inline-code-bg: rgba(255, 255, 255, 0.05);
   --code-color: #b0b0b0;
   --code-header-text-color: #6a6a6a;
-  --code-header-muted-color: #353535;
+  --code-header-muted-color-first: #ed8b83;
+  --code-header-muted-color-second: #86bb70;
+  --code-header-muted-color-third: #bfc777;
   --code-header-icon-color: #565656;
   --clipboard-checked-color: #2bcc2b;
   --filepath-text-color: #cacaca;

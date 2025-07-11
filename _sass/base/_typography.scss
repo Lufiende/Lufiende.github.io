@@ -28,6 +28,56 @@
 
       & {
         font-size: 1rem + (5 - $i) * $size-factor;
+
+        @if $i == 2 {
+          position: relative;
+          padding-left: 1.5em;
+
+          .content &::before {
+            content: '❖';
+            position: absolute;
+            left: 0.1em;
+            color: var(--header-zhengfangxing);
+            font-size: 1em;
+          }
+
+          // 标题内容红色下划线
+          span {
+            border-bottom: 2px solid var(--header-zhengfangxing);
+            color: inherit;
+          }
+        }
+
+        @if $i == 3 {
+          position: relative;
+          padding-left: 1.5em;
+
+          .content &::before {
+            content: '♦';
+            position: absolute;
+            left: 0.2em;
+            color: var(--header-lingxing);
+            font-size: 1em;
+          }
+
+          span {
+            border-bottom: 2px solid var(--header-lingxing);
+            color: inherit;
+          }
+        }
+
+        @if $i > 3 {
+          position: relative;
+          padding-left: 1.5em;
+
+          .content &::before {
+            content: '♪';
+            position: absolute;
+            left: 0.19em;
+            color: var(--header-yinfu);
+            font-size: 1em;
+          }
+        }
       }
     } @else {
       font-size: 1.05rem;
@@ -55,10 +105,10 @@ img {
 }
 
 blockquote {
-  border-left: 0.125rem solid var(--blockquote-border-color);
-  padding-left: 1rem;
+  border-left: 0.3rem solid #bfbcbc;
   color: var(--blockquote-text-color);
-  margin-top: 0.5rem;
+  background-color: var(--blockquote-orig-bgcolor);
+  padding: 0.8rem;
 
   > p:last-child {
     margin-bottom: 0;

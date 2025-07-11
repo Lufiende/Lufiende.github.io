@@ -249,7 +249,8 @@ header {
   top: 0;
   width: 100%;
   height: 3rem;
-  background: linear-gradient(var(--main-bg) 50%, transparent);
+
+  // background: linear-gradient(var(--main-bg) 50%, transparent);
 }
 
 #toc-wrapper {
@@ -284,7 +285,7 @@ header {
     /* Overwrite TOC plugin style */
 
     .toc-link {
-      display: block;
+      // display: block;
 
       @extend %text-ellipsis;
 
@@ -325,15 +326,15 @@ header {
     @extend %top-cover;
   }
 
-  &::after {
-    content: '';
-    position: fixed;
-    bottom: 0;
-    width: 15%;
-    height: 2.25rem;
-    margin-left: -1px;
-    background: linear-gradient(transparent, var(--main-bg) 70%);
-  }
+  // &::after {
+  //   content: '';
+  //   position: fixed;
+  //   bottom: 0;
+  //   width: 15%;
+  //   height: 2.25rem;
+  //   margin-left: -1px;
+  //   background: linear-gradient(transparent, var(--main-bg) 70%);
+  // }
 
   > * {
     @extend %panel-border;

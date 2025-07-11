@@ -1,0 +1,96 @@
+:root {
+  --blockquote-padding: 18px;
+  --blockquote-font-size: 0.96rem;
+  --blockquote-font-weight: 530;
+  --blockquote-line-height: 1.7;
+}
+
+blockquote[alt] {
+  padding: var(--blockquote-padding);
+  font-size: var(--blockquote-font-size);
+  font-weight: var(--blockquote-font-weight);
+  border-left: var(--blockquote-border-left);
+  background-color: var(--blockquote-background-color);
+  line-height: var(--blockquote-line-height);
+  position: relative;
+  padding-left: calc(
+    var(--blockquote-padding) + 20px
+  ); // 增加左侧内边距让文字偏右
+
+  color: var(--blockquote-font-color); // 设置字体颜色
+}
+
+blockquote[alt='info'] > *,
+blockquote[alt='warn'] > *,
+blockquote[alt='success'] > *,
+blockquote[alt='danger'] > * {
+  margin-left: 1.5em;
+}
+
+blockquote[alt='info'] {
+  border-left: var(--info-blockquote-border-left);
+  background-color: var(--info-blockquote-background-color);
+}
+
+blockquote[alt='info']::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  margin: 0;
+  padding-right: 5px;
+  font-family: FontAwesome, sans-serif; /* 正确 Font Awesome 字体 */
+  font-weight: 400; /* 固体图标需要此权重 */
+  content: '\f05a';
+}
+
+blockquote[alt='warn'] {
+  border-left: var(--warn-blockquote-border-left);
+  background-color: var(--warn-blockquote-background-color);
+}
+
+blockquote[alt='warn']::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  margin: 0;
+  padding-right: 5px;
+  font-family: FontAwesome, sans-serif; /* 正确 Font Awesome 字体 */
+  font-weight: 400; /* 固体图标需要此权重 */
+  content: '\f071'; /* stream 图标的 Unicode */
+}
+
+blockquote[alt='danger'] {
+  border-left: var(--danger-blockquote-border-left);
+  background-color: var(--danger-blockquote-background-color);
+}
+
+blockquote[alt='danger']::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  margin: 0;
+  padding-right: 5px;
+  font-family: FontAwesome, sans-serif; /* 正确 Font Awesome 字体 */
+  font-weight: 400; /* 固体图标需要此权重 */
+  content: '\f057';
+}
+
+blockquote[alt='success'] {
+  border-left: var(--success-blockquote-border-left);
+  background-color: var(--success-blockquote-background-color);
+}
+
+blockquote[alt='success']::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  margin: 0;
+  padding-right: 5px;
+  font-family: FontAwesome, sans-serif; /* 正确 Font Awesome 字体 */
+  font-weight: 400; /* 固体图标需要此权重 */
+  content: '\f058';
+}
