@@ -35,6 +35,10 @@
 </style>
 
 <script>
+  if (!sessionStorage.getItem('hasReloaded')) {
+    sessionStorage.setItem('hasReloaded', 'true');
+    window.location.reload(true); // 强制硬刷新
+  }
   // 异步加载图片配置文件
   async function loadImageConfig() {
     try {
