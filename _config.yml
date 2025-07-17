@@ -48,7 +48,7 @@ social:
   # links:
   #   # The first element serves as the copyright owner's link
   #   - https://twitter.com/username # change to your Twitter homepage
-  links: 
+  links:
     - https://github.com/Lufiende # change to your GitHub homepage
   #   # Uncomment below to add more social links
   #   # - https://www.facebook.com/username
@@ -106,10 +106,10 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: "https://blog.lufiende.work"
+cdn: ""
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/assets/img/avatar.png"
+avatar: "/assets/img/avatar.jpg"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -119,9 +119,10 @@ social_preview_image: "/assets/img/avatar.png" # string, local or CORS resources
 toc: true
 
 toc:
-  min_level: 1
-  max_level: 6
+  selectors: h1, h2, h3, h4, h5, h6
+  toc_levels: 1..6 # the range of heading levels to be included in the TOC
   ordered_list: true
+  max_depth: 6 # the maximum depth of the TOC, 0 means no limit
 
 comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.

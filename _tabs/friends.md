@@ -19,7 +19,7 @@ order: 6
 <div class="friend-links-container">
 
   <div class="friend-link-card friend-link-horizontal">
-    <img src="https://ukfc.twilightly.top/img/ukfc_hu16778874158321978017.jpg" alt="UKFC 组织头像，挂了的话请联系我" class="friend-avatar">
+    <img src="https://ukfc.twilightly.top/img/ukfc_hu12737188529753979799.png" alt="UKFC 组织头像，挂了的话请联系我" class="friend-avatar">
     <div class="friend-content">
       <div class="friend-name">
         <a href="https://ukfc.lufiende.work">UKFC</a>
@@ -109,7 +109,7 @@ order: 6
 <div class="friend-links-container">
 
   <div class="friend-link-card friend-link-horizontal">
-    <img src="http://127.0.0.1:4000/assets/img/friends/NewStarCTF.png" alt="NewstarCTF 组织头像，挂了的话请联系我" class="friend-avatar">
+    <img src="/assets/img/friends/NewStarCTF.png" alt="NewstarCTF 组织头像，挂了的话请联系我" class="friend-avatar">
     <div class="friend-content">
       <div class="friend-name">
         <a href="https://newstar.wiki/">新生赛 NewStar CTF [2025 Comming Soon ...]</a>

@@ -3,7 +3,7 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
-@for $i from 1 through 5 {
+@for $i from 1 through 7 {
   h#{$i} {
     @extend %heading;
 
@@ -11,8 +11,8 @@
       @extend %anchor;
     }
 
-    @if $i < 5 {
-      $size-factor: 0.25rem;
+    @if $i < 7 {
+      $size-factor: 0.2rem;
 
       @if $i > 1 {
         $size-factor: 0.18rem;
@@ -27,7 +27,74 @@
       }
 
       & {
-        font-size: 1rem + (5 - $i) * $size-factor;
+        font-size: 1rem + (6 - $i) * $size-factor;
+        font-weight: bold;
+
+        @if $i > 1 {
+          position: relative;
+          padding-left: 1.5em;
+        }
+
+        @if $i == 2 {
+          .content &::before {
+            content: '❖';
+            position: absolute;
+            left: 0.1em;
+            color: var(--header-zhengfangxing);
+            font-size: 1em;
+          }
+
+          // 标题内容红色下划线
+          span {
+            border-bottom: 2px solid var(--header-zhengfangxing);
+            color: inherit;
+          }
+        }
+
+        @if $i == 3 {
+          .content &::before {
+            content: '♦';
+            position: absolute;
+            left: 0.08em;
+            color: var(--header-lingxing);
+            font-size: 1em;
+          }
+
+          span {
+            border-bottom: 2px solid var(--header-lingxing);
+            color: inherit;
+          }
+        }
+
+        @if $i == 4 {
+          .content &::before {
+            content: '✦';
+            position: absolute;
+            left: 0.19em;
+            color: var(--header-yinfu);
+            font-size: 1em;
+          }
+
+          span {
+            border-bottom: 2px solid var(--header-yinfu);
+            color: inherit;
+          }
+        }
+
+        @if $i > 4 {
+          .content &::before {
+            content: '♪';
+            position: absolute;
+            left: 0.19em;
+            color: var(--header-zhengfanglingxing);
+            font-size: 1em;
+          }
+
+          span {
+            border-bottom: 2px solid var(--header-zhengfanglingxing);
+            color: inherit;
+          }
+        }
       }
     } @else {
       font-size: 1.05rem;
@@ -55,10 +122,10 @@ img {
 }
 
 blockquote {
-  border-left: 0.125rem solid var(--blockquote-border-color);
-  padding-left: 1rem;
+  border-left: 0.3rem solid #bfbcbc;
   color: var(--blockquote-text-color);
-  margin-top: 0.5rem;
+  background-color: var(--blockquote-orig-bgcolor);
+  padding: 0.8rem;
 
   > p:last-child {
     margin-bottom: 0;

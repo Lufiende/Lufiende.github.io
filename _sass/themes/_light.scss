@@ -7,6 +7,26 @@
   --friend-desc-color: #34343c; // 使用 --text-color
   --friend-link-hover: #0056b2; // 使用 --link-color
 
+  /* 页面元素专属变量 */
+  --header-zhengfangxing: #de4132;
+  --header-lingxing: #43aa1b;
+  --header-yinfu: #afc01a;
+  --header-zhengfanglingxing: #cf62a7;
+  --blockquote-font-color: #34343c;
+  --blockquote-border-left: 5px solid #9d8ed0;
+  --blockquote-background-color: #f3f0ff;
+  --blockquote-orig-bgcolor: #f9f9f9;
+  --info-blockquote-border-left: 5px solid #5fa7e4;
+  --info-blockquote-background-color: #e4edf6;
+  --warn-blockquote-border-left: 5px solid #f0ad4e;
+  --warn-blockquote-background-color: #fffacd;
+  --danger-blockquote-border-left: 5px solid #db524f;
+  --danger-blockquote-background-color: #fdeaea;
+  --success-blockquote-border-left: 5px solid #5cb85c;
+  --success-blockquote-background-color: #eef7f0;
+  --emp-line-color: #db524f;
+  --kbd-border-color: #db524f;
+
   /* Framework color */
   --main-bg: white;
   --mask-bg: #c1c3c5;
@@ -26,7 +46,7 @@
   --btn-border-color: #e9ecef;
   --btn-backtotop-color: #686868;
   --btn-backtotop-border-color: #f1f1f1;
-  --checkbox-color: #c5c5c5;
+  --checkbox-color: #db524f;
   --checkbox-checked-color: #07a8f7;
   --img-bg: radial-gradient(
     circle,
@@ -114,7 +134,9 @@
   --inline-code-bg: rgba(25, 25, 28, 0.05);
   --code-color: #3a3a3a;
   --code-header-text-color: #a3a3a3;
-  --code-header-muted-color: #e5e5e5;
+  --code-header-muted-color-first: #de4132;
+  --code-header-muted-color-second: #43aa1b;
+  --code-header-muted-color-third: #afc01a;
   --code-header-icon-color: #c9c8c8;
   --clipboard-checked-color: #43c743;
 

@@ -1,0 +1,136 @@
+<style>
+  #backgroundImg {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 0; /* 初始高度，例如 50px */
+    width: 0; /* 初始宽度，例如 50px */
+    opacity: 0.3;
+    background-size: cover;
+    z-index: -1; /* 图片在最下层 */
+    cursor: pointer;
+    transition: opacity 0.05s ease;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.3));
+  }
+
+  #tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1000; /* 提示文字在最上层 */
+    display: none;
+  }
+  #triggerArea {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 0px;
+    height: 0px;
+    z-index: 1; /* 触发区域在图片之上但低于其他内容 */
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  // 异步加载图片配置文件
+  async function loadImageConfig() {
+    try {
+      const response = await fetch('/assets/img/background/images.json');
+      if (!response.ok) throw new Error(`Failed to load image config: ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      console.error('Error loading image config:', error);
+      return [];
+    }
+  }
+
+  // 设置背景图片和触发区域大小
+  function setBGSize() {
+    const topbar = document.getElementById('topbar-wrapper');
+    const backgroundImg = document.getElementById('backgroundImg');
+    const triggerArea = document.getElementById('triggerArea');
+    if (topbar && backgroundImg && triggerArea) {
+      // 计算目标宽度（15% of topbar width）
+      let targetWidth = parseInt(topbar.offsetWidth) * 0.3;
+      // 限制宽度在 100px 到 300px 之间
+      targetWidth = Math.max(200, Math.min(480, targetWidth));
+      backgroundImg.style.width = targetWidth + 'px';
+      backgroundImg.style.height = targetWidth + 'px';
+      // 触发区域为图片右下角四分之一
+      triggerArea.style.width = targetWidth / 2 + 'px';
+      triggerArea.style.height = targetWidth / 2 + 'px';
+    } else {
+      console.warn('Missing topbar-wrapper, backgroundImg, or triggerArea element');
+    }
+  }
+
+  // 设置随机背景图片和交互
+  function setRandomBackground(imageConfig) {
+    const backgroundImg = document.getElementById('backgroundImg');
+    const triggerArea = document.getElementById('triggerArea');
+    const tooltip = document.getElementById('tooltip');
+    if (!backgroundImg || !triggerArea || !tooltip || !imageConfig.length) {
+      console.warn('Missing required elements or image config');
+      return;
+    }
+
+    // 随机选择图片
+    const randomIndex = Math.floor(Math.random() * imageConfig.length);
+    const selectedImage = imageConfig[randomIndex];
+
+    // 设置背景图片
+    backgroundImg.style.backgroundImage = `url('${selectedImage.src}')`;
+
+    // 图片点击跳转
+    triggerArea.onclick = () => {
+      window.location.href = selectedImage.url;
+    };
+
+    // 触发区域鼠标悬停显示提示文字
+    triggerArea.onmouseenter = () => {
+      tooltip.style.display = 'block';
+      tooltip.textContent = selectedImage.tooltip;
+      tooltip.style.bottom = '10px';
+      tooltip.style.right = parseInt(backgroundImg.offsetWidth) / 2 + 10 + 'px';
+    };
+
+    triggerArea.onmousemove = (e) => {
+      tooltip.style.bottom = window.innerHeight - e.clientY + 10 + 'px';
+      tooltip.style.right = window.innerWidth - e.clientX + 10 + 'px';
+    };
+
+    triggerArea.onmouseleave = () => {
+      tooltip.style.display = 'none';
+    };
+  }
+
+  // 等待 DOM 加载完成
+  function init() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', async () => {
+        const imageConfig = await loadImageConfig();
+        setBGSize();
+        setRandomBackground(imageConfig);
+      });
+    } else {
+      // DOM 已加载
+      loadImageConfig().then((imageConfig) => {
+        setBGSize();
+        setRandomBackground(imageConfig);
+      });
+    }
+  }
+
+  // 初始化
+  init();
+
+  // 窗口缩放时调整大小
+  window.onresize = setBGSize;
+</script>
+
+<div id="backgroundImg"></div>
+<div id="triggerArea"></div>
+<div id="tooltip"></div>
