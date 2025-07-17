@@ -3,7 +3,7 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
-@for $i from 1 through 5 {
+@for $i from 1 through 7 {
   h#{$i} {
     @extend %heading;
 
@@ -11,8 +11,8 @@
       @extend %anchor;
     }
 
-    @if $i < 5 {
-      $size-factor: 0.25rem;
+    @if $i < 7 {
+      $size-factor: 0.2rem;
 
       @if $i > 1 {
         $size-factor: 0.18rem;
@@ -27,12 +27,15 @@
       }
 
       & {
-        font-size: 1rem + (5 - $i) * $size-factor;
+        font-size: 1rem + (6 - $i) * $size-factor;
+        font-weight: bold;
 
-        @if $i == 2 {
+        @if $i > 1 {
           position: relative;
           padding-left: 1.5em;
+        }
 
+        @if $i == 2 {
           .content &::before {
             content: '❖';
             position: absolute;
@@ -49,13 +52,10 @@
         }
 
         @if $i == 3 {
-          position: relative;
-          padding-left: 1.5em;
-
           .content &::before {
             content: '♦';
             position: absolute;
-            left: 0.2em;
+            left: 0.08em;
             color: var(--header-lingxing);
             font-size: 1em;
           }
@@ -66,16 +66,33 @@
           }
         }
 
-        @if $i > 3 {
-          position: relative;
-          padding-left: 1.5em;
-
+        @if $i == 4 {
           .content &::before {
-            content: '♪';
+            content: '✦';
             position: absolute;
             left: 0.19em;
             color: var(--header-yinfu);
             font-size: 1em;
+          }
+
+          span {
+            border-bottom: 2px solid var(--header-yinfu);
+            color: inherit;
+          }
+        }
+
+        @if $i > 4 {
+          .content &::before {
+            content: '♪';
+            position: absolute;
+            left: 0.19em;
+            color: var(--header-zhengfanglingxing);
+            font-size: 1em;
+          }
+
+          span {
+            border-bottom: 2px solid var(--header-zhengfanglingxing);
+            color: inherit;
           }
         }
       }

@@ -3,6 +3,38 @@
   --blockquote-font-size: 0.96rem;
   --blockquote-font-weight: 530;
   --blockquote-line-height: 1.7;
+  --emp-margin: 0px;
+  --emp-padding: 0px;
+  --emp-font-size: 1rem;
+  --emp-font-weight: 400;
+  --emp-line-height: 1.5;
+
+  /* KBD */
+  --kbd-margin: 0px;
+  --kbd-padding: 2px 4px;
+  --kbd-font-family: 'Consolas';
+  --kbd-font-size: 1rem;
+  --kbd-font-weight: 200;
+  --kbd-color: #000000;
+  --kbd-background-color: #ffffff;
+  --kbd-border-width: 2px;
+  --kbd-border-radius: 2px;
+  --kbd-border-color: #000000;
+
+  /* 折叠标签 */
+  --details-title-font-size: 1rem;
+  --details-title-font-weight: 600;
+  --details-title-line-height: 1.5;
+  --details-title-color: rgba(0, 0, 0, 0.75);
+  --details-title-background-color: #d0edf1;
+  --details-content-font-size: 1rem;
+  --details-content-font-weight: 300;
+  --details-content-line-height: 1.5;
+  --details-content-color: rgba(0, 0, 0, 0.75);
+  --details-content-background-color: #ffffff;
+  --details-border-before: 2px solid #000000; /* 展开前的边框 */
+  --details-border-after: 2px solid #000000; /* 展开后的边框 */
+  --details-border-radius: 5px;
 }
 
 blockquote[alt] {
@@ -93,4 +125,60 @@ blockquote[alt='success']::before {
   font-family: FontAwesome, sans-serif; /* 正确 Font Awesome 字体 */
   font-weight: 400; /* 固体图标需要此权重 */
   content: '\f058';
+}
+
+span[alt] {
+  margin: var(-emp-margin);
+  padding: var(--emp-padding);
+  font-size: var(--emp-font-size);
+  font-weight: var(--emp-font-weight);
+  line-height: var(--emp-line-height);
+}
+
+span[alt='solid'] {
+  text-decoration-line: underline;
+  text-decoration-color: var(--emp-line-color);
+  text-decoration-style: solid;
+  text-underline-offset: 2px;
+  text-decoration-skip-ink: none;
+}
+
+span[alt='dashed'] {
+  text-decoration-line: underline;
+  text-decoration-color: var(--emp-line-color);
+  text-decoration-style: dashed;
+  text-underline-offset: 2px;
+  text-decoration-skip-ink: none;
+}
+
+span[alt='dotted'] {
+  text-decoration-line: underline;
+  text-decoration-color: var(--emp-line-color);
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  text-decoration-skip-ink: none;
+}
+
+span[alt='wavy'] {
+  text-decoration-line: underline;
+  text-decoration-color: var(--emp-line-color);
+  text-decoration-style: wavy;
+  text-underline-offset: 2px;
+  text-decoration-skip-ink: none;
+}
+
+/* KBD */
+kbd {
+  margin: var(--kbd-margin);
+  padding: var(--kbd-padding);
+  vertical-align: baseline;
+  border-radius: var(--kbd-border-radius);
+  border-width: var(--kbd-border-width);
+  border-color: var(--kbd-border-color);
+}
+
+table td,
+table th {
+  white-space: normal;
+  word-wrap: break-word;
 }

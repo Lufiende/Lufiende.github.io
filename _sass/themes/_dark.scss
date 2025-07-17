@@ -13,6 +13,7 @@
   --header-zhengfangxing: #ffaca4;
   --header-lingxing: #86bb70;
   --header-yinfu: #bfc777;
+  --header-zhengfanglingxing: #c47faa;
   --blockquote-border-left: 5px solid #a492dc;
   --blockquote-background-color: #f3f0ff;
   --blockquote-font-color: #d4d4d4;
@@ -25,6 +26,8 @@
   --danger-blockquote-background-color: #fdeaea4d;
   --success-blockquote-border-left: 5px solid #86bb70;
   --success-blockquote-background-color: #eef7f04d;
+  --emp-line-color: #ffaca4;
+  --kbd-border-color: #ffaca4;
 
   /* Framework color */
   --main-bg: rgb(27, 27, 30);
@@ -46,7 +49,7 @@
   --btn-backtotop-color: var(--text-color);
   --btn-backtotop-border-color: #212122;
   --card-header-bg: #292929;
-  --checkbox-color: rgb(118, 120, 121);
+  --checkbox-color: #ffaca4;
   --checkbox-checked-color: var(--link-color);
   --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
   --shimmer-bg: linear-gradient(

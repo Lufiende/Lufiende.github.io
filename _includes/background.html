@@ -3,17 +3,16 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    height: auto;
-    width: 0px;
-    opacity: 0.2;
+    height: 0; /* 初始高度，例如 50px */
+    width: 0; /* 初始宽度，例如 50px */
+    opacity: 0.3;
     background-size: cover;
     z-index: -1; /* 图片在最下层 */
     cursor: pointer;
-    transition: opacity 0.3s ease, width 0.5s ease, height 0.5s ease;
+    transition: opacity 0.05s ease;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.3));
   }
-  #backgroundImg:hover {
-    opacity: 0.8;
-  }
+
   #tooltip {
     position: fixed;
     background: rgba(0, 0, 0, 0.8);
@@ -55,9 +54,9 @@
     const triggerArea = document.getElementById('triggerArea');
     if (topbar && backgroundImg && triggerArea) {
       // 计算目标宽度（15% of topbar width）
-      let targetWidth = parseInt(topbar.offsetWidth) * 0.4;
+      let targetWidth = parseInt(topbar.offsetWidth) * 0.3;
       // 限制宽度在 100px 到 300px 之间
-      targetWidth = Math.max(300, Math.min(500, targetWidth));
+      targetWidth = Math.max(200, Math.min(480, targetWidth));
       backgroundImg.style.width = targetWidth + 'px';
       backgroundImg.style.height = targetWidth + 'px';
       // 触发区域为图片右下角四分之一
@@ -86,7 +85,7 @@
     backgroundImg.style.backgroundImage = `url('${selectedImage.src}')`;
 
     // 图片点击跳转
-    backgroundImg.onclick = () => {
+    triggerArea.onclick = () => {
       window.location.href = selectedImage.url;
     };
 
