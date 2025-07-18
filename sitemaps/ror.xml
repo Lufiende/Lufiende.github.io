@@ -7,14 +7,54 @@
 <item>
      <link>https://blog.lufiende.work/</link>
      <title>Lufiende's Blog</title>
-     <description>这里主要介绍 CTF 与有趣的小玩意！Focuses on CTF and fun gadgets!</description>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>0</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
+     <link>https://blog.lufiende.work/categories/</link>
+     <title>Categories | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/archives/</link>
+     <title>Archives | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/posts/pwn-2025-L3HCTF-writeup-pwn/</link>
+     <title>[Pwn] Writeup - 2025 - L3HCTF | Lufiende's Blog</title>
+     <description>L3HCTF 2025 Pwn 方向 WriteUp，All Break SSS+ 101.0000%</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/posts/pwn-glibc-ptmalloc2-heap-introduction/</link>
+     <title>[Pwn] Glibc 中 Ptmalloc2 下的 Heap - Part 01 | Lufiende's Blog</title>
+     <description>面向 2.23 以及更高版本的 Glibc 源码，结合自身经验对于 Glibc 中 Ptmalloc2 堆管理器特性的解析</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/posts/pwn-2025-n1ctf-junior-writeup-pwn/</link>
+     <title>[Pwn] Writeup - 2025 - N1ctf Junior | Lufiende's Blog</title>
+     <description>西湖论剑2025 Pwn 方向 WriteUp ，目前只有 Remake 和 Write at will</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
      <link>https://blog.lufiende.work/posts/pwn-2025-xihulunjian-writeup-pwn-iot/</link>
-     <title>[Pwn] Writeup - 2025西湖论剑 - Pwn &amp; IoT | Lufiende's Blog</title>
+     <title>[Pwn] Writeup - 2025 - 西湖论剑初赛 | Lufiende's Blog</title>
      <description>西湖论剑2025 Pwn 方向 WriteUp ，IoT 暂未更新</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
@@ -22,10 +62,66 @@
 </item>
 <item>
      <link>https://blog.lufiende.work/posts/pwn-environment-setup-based-on-wsl-kali-linux/</link>
-     <title>[Pwn] 环境配置 - 基于 WSL 的 Kali - Linux | Lufiende's Blog</title>
+     <title>[Pwn] 基于 WSL 的 Kali - Linux 环境配置 | Lufiende's Blog</title>
      <description>使用我们在 Windows 上最棒的 Linux 虚拟机平台 - WSL2 并搭配 VSCode 创建一个易于使用的 Pwn 环境虚拟机</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/posts/kanbanmusume-list/</link>
+     <title>[Blog] 博客看板娘一览 | Lufiende's Blog</title>
+     <description>记录了本博客右下角的看板娘，并开源看板娘的生成细节（没错基本全是 AI ）</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/categories/blog-construction-%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/</link>
+     <title>Blog-Construction | 博客建设 | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/categories/ctf-pwn-%E9%92%88%E5%AF%B9-ctf-%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/</link>
+     <title>CTF-Pwn | 针对 CTF 的二进制安全 | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/categories/pwn-environment-%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+     <title>Pwn-Environment | 基础环境搭建 | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/categories/pwn-glibc-ptmalloc2heap-%E5%9F%BA%E4%BA%8E-glibc-ptmalloc2-%E7%9A%84%E5%A0%86/</link>
+     <title>Pwn-Glibc-Ptmalloc2Heap | 基于 Glibc Ptmalloc2 的堆 | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/categories/ctf-writeup-%E9%9D%9E%E5%AE%98%E6%96%B9%E9%A2%98%E8%A7%A3/</link>
+     <title>CTF-Writeup | 非官方题解 | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://blog.lufiende.work/categories/pwn-2025/</link>
+     <title>Pwn-2025 | Lufiende's Blog</title>
+     <description>介绍 CTF 与其他有趣的东西！Focuses on CTF and fun gadgets!</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 </channel>

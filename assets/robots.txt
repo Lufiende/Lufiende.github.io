@@ -16,3 +16,4 @@ Disallow: /friends
 Disallow: /norobots
 Disallow: /404
 Disallow: /tags
+Disallow: /posts/kanbanmusume-list/
