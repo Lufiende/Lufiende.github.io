@@ -19,4 +19,4 @@ Disallow: /tags
 Disallow: /posts/kanbanmusume-list/
 Disallow: /categories/
 
-Sitemap: https://lufiende.github.io/sitemaps/sitemap.xml
+Sitemap: https://blog.lufiende.work/sitemaps/sitemap.xml
