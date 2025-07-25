@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Pwn] Writeup - 2025 - L3HCTF"
+title: "[Pwn] L3HCTF 2025 Pwn Writeup"
 date: 2025-07-17 23:58 +0800
 
 description: >-
@@ -747,6 +747,16 @@ while True:
 
 <span class="blackout" title="你知道的太多了">你说的对但是赛宁网安是不是要出事了（仅限 2025/7/17）</span>
 
-
-
+```mermaid
+graph TD
+	D(运行 eBPF 程序流程)
+	E[eBPF 虚拟机内部]-->|使用解释器解释\n支持 JIT 就执行机器码|F[（代码运行环境）]
+	F-->H[10 个寄存器]
+	H-->F
+	F-->I[Map 存储]
+	I-->F
+	J[eBPF Map 相关系统调用]-->|创建|I
+	F-->|bpf call|K[eBPF 相关函数（也是做题突破点）]
+	K-->|返回值 / 对上下文进行操作|F
+	L[eBPF 程序类型]-->|决定|K
 

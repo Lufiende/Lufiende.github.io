@@ -109,7 +109,7 @@ theme_mode: # [light | dark]
 cdn: ""
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/assets/img/avatar.jpg"
+avatar: "/assets/img/avatar.webp"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -156,13 +156,13 @@ assets:
 
 pwa:
   enabled: false # The option for PWA feature (installable)
-  cache:
-    enabled: false # The option for PWA offline cache
-    # Paths defined here will be excluded from the PWA cache.
-    # Usually its value is the `baseurl` of another website that
-    # shares the same domain name as the current website.
-    deny_paths:
-      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
+  # cache:
+  #   enabled: false # The option for PWA offline cache
+  #   # Paths defined here will be excluded from the PWA cache.
+  #   # Usually its value is the `baseurl` of another website that
+  #   # shares the same domain name as the current website.
+  #   deny_paths:
+  #     # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
 paginate: 10
 
@@ -177,7 +177,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
     css_class: highlight
-    # default_lang: console
+    default_lang: console
     span:
       line_numbers: false
     block:

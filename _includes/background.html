@@ -112,7 +112,7 @@
   }
 
   // 等待 DOM 加载完成
-  function init() {
+  function kanbanInit() {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', async () => {
         const imageConfig = await loadImageConfig();
@@ -126,13 +126,13 @@
         setRandomBackground(imageConfig);
       });
     }
+    window.onresize = setBGSize;
   }
 
   // 初始化
-  init();
+  kanbanInit();
 
   // 窗口缩放时调整大小
-  window.onresize = setBGSize;
 </script>
 
 <div id="backgroundImg"></div>

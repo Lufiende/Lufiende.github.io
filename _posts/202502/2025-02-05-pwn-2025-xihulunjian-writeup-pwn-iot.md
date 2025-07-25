@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Pwn] Writeup - 2025 - 西湖论剑初赛"
+title: "[Pwn] 西湖论剑初赛 2025 Pwn Writeup"
 date: 2025-01-22 23:45 +0800
 
 description: >-

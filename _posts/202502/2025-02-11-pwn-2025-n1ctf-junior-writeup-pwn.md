@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Pwn] Writeup - 2025 - N1ctf Junior"
+title: "[Pwn] N1CTF Junior 2025 Pwn Writeup"
 date: 2025-02-11 18:01 +0800
 
 description: >-
