@@ -3,11 +3,11 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    height: 0; /* 初始高度，例如 50px */
-    width: 0; /* 初始宽度，例如 50px */
+    height: 0;
+    width: 0;
     opacity: 0.3;
     background-size: cover;
-    z-index: -1; /* 图片在最下层 */
+    z-index: -1;
     cursor: pointer;
     transition: opacity 0.05s ease;
     filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.3));
@@ -20,7 +20,7 @@
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 14px;
-    z-index: 1000; /* 提示文字在最上层 */
+    z-index: 1000;
     display: none;
   }
   #triggerArea {
@@ -29,17 +29,12 @@
     right: 50px;
     width: 0px;
     height: 0px;
-    z-index: 1; /* 触发区域在图片之上但低于其他内容 */
+    z-index: 1;
     cursor: pointer;
   }
 </style>
 
 <script>
-  if (!sessionStorage.getItem('hasReloaded')) {
-    sessionStorage.setItem('hasReloaded', 'true');
-    window.location.reload(true); // 强制硬刷新
-  }
-  // 异步加载图片配置文件
   async function loadImageConfig() {
     try {
       const response = await fetch('/assets/img/background/images.json');
@@ -51,19 +46,15 @@
     }
   }
 
-  // 设置背景图片和触发区域大小
   function setBGSize() {
     const topbar = document.getElementById('topbar-wrapper');
     const backgroundImg = document.getElementById('backgroundImg');
     const triggerArea = document.getElementById('triggerArea');
     if (topbar && backgroundImg && triggerArea) {
-      // 计算目标宽度（15% of topbar width）
       let targetWidth = parseInt(topbar.offsetWidth) * 0.3;
-      // 限制宽度在 100px 到 300px 之间
       targetWidth = Math.max(200, Math.min(480, targetWidth));
       backgroundImg.style.width = targetWidth + 'px';
       backgroundImg.style.height = targetWidth + 'px';
-      // 触发区域为图片右下角四分之一
       triggerArea.style.width = targetWidth / 2 + 'px';
       triggerArea.style.height = targetWidth / 2 + 'px';
     } else {
@@ -71,7 +62,6 @@
     }
   }
 
-  // 设置随机背景图片和交互
   function setRandomBackground(imageConfig) {
     const backgroundImg = document.getElementById('backgroundImg');
     const triggerArea = document.getElementById('triggerArea');
@@ -81,19 +71,15 @@
       return;
     }
 
-    // 随机选择图片
     const randomIndex = Math.floor(Math.random() * imageConfig.length);
     const selectedImage = imageConfig[randomIndex];
 
-    // 设置背景图片
     backgroundImg.style.backgroundImage = `url('${selectedImage.src}')`;
 
-    // 图片点击跳转
     triggerArea.onclick = () => {
       window.location.href = selectedImage.url;
     };
 
-    // 触发区域鼠标悬停显示提示文字
     triggerArea.onmouseenter = () => {
       tooltip.style.display = 'block';
       tooltip.textContent = selectedImage.tooltip;
@@ -111,7 +97,6 @@
     };
   }
 
-  // 等待 DOM 加载完成
   function kanbanInit() {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', async () => {
@@ -120,7 +105,6 @@
         setRandomBackground(imageConfig);
       });
     } else {
-      // DOM 已加载
       loadImageConfig().then((imageConfig) => {
         setBGSize();
         setRandomBackground(imageConfig);
@@ -129,10 +113,7 @@
     window.onresize = setBGSize;
   }
 
-  // 初始化
   kanbanInit();
-
-  // 窗口缩放时调整大小
 </script>
 
 <div id="backgroundImg"></div>
